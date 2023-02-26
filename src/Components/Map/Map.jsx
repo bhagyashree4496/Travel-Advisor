@@ -61,6 +61,15 @@ export default function Map({ setBounds, setCoords, coords, places }) {
                 <LocationOnOutlinedIcon
                   style={{ color: "red" }}
                 ></LocationOnOutlinedIcon>
+                <div className="cardonmap card">
+                  <img
+                    className="card card-img-top cardImg"
+                    src={place.photo ? place.photo.images.small.url : photo}
+                    alt="Card image cap"
+                  />
+
+                  <p className="card-text">{place.name}</p>
+                </div>
                 {/* {popup && (
                   <InfoWindow
                     onCloseClick={() => {
