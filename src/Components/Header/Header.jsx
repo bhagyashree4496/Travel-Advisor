@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import "./style.css";
 import { Autocomplete } from "@react-google-maps/api";
 
-export default function Header() {
+export default function Header({ setCoords }) {
+  const [autocomplete, setautocomplete] = useState(null);
+  const onLoad = (autoc) => {
+    setautocomplete(autoc);
+  };
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+    setCoords({ lat: lat, lng: lng });
+  };
   return (
     <nav
       className="navbar navbar-light "
@@ -10,21 +20,18 @@ export default function Header() {
       }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand text-light ">Travel Advisor</a>
+        <a className="navbar-brand  text-light logo">Travel Advisor</a>
 
-        <form className="d-flex ">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Explore new places"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success text-white hover:bg(white)"
-            type="submit"
-          >
-            Search
-          </button>
+        <form className="d-flex align-items-center justify-content-center ">
+          <h6 className="text-light me-1">Search for places</h6>
+          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Explore new places"
+              aria-label="Search"
+            />
+          </Autocomplete>
         </form>
       </div>
     </nav>

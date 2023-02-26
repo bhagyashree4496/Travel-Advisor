@@ -1,0 +1,22 @@
+.map {
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(71, 1, 71, 1);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(71, 1, 71, 1);
+  box-shadow: 1px 1px 5px 0px rgba(71, 1, 71, 1);
+}
+.cardonmap {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height: 88px;
+  width: 90px;
+}
+.cardImg {
+  height: 60px;
+  /* width: 90px; */
+  object-fit: cover;
+  object-position: center;
+  touch-action: none;
+}
+.hoverz:hover {
+  z-index: 50;
+}
