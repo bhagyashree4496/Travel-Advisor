@@ -21,7 +21,7 @@ export default function Map({ setBounds, setCoords, coords, places }) {
         style={{ height: "88vh", width: "100%", padding: "10px" }}
       >
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyBb6g3Dvp6to2muhMoqaX_4LPqy9tG1kIw" }}
+          bootstrapURLKeys={{ key: "AIza_4LPqy9tG1kIw" }}
           center={coords}
           defaultCenter={coords}
           defaultZoom={14}
